@@ -109,6 +109,12 @@ func main() {
 		os.Exit(1)
 	}
 
+	err = lit(sd) // Generate the large image script and run it
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "Error generating large image script:", err)
+		os.Exit(1)
+	}
+
 }
 
 func newStable() *stable {
